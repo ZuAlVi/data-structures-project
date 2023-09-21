@@ -17,3 +17,11 @@ class TestQueue(unittest.TestCase):
         self.assertEquals(queue.tail.data, 'data3')
         with self.assertRaises(AttributeError):
             queue.tail.next_node.data
+
+    def test_queue_dequeue(self):
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+
+        self.assertEquals(queue.dequeue(), 'data1')
+        self.assertEquals(queue.dequeue(), 'data2')
+        self.assertEquals(queue.dequeue(), None)
