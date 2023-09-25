@@ -40,6 +40,7 @@ class Queue:
         if self.head.next_node is None:
             data = self.head.data
             self.head.data = None
+            self.tail = None
         else:
             data = self.head.data
             self.head = self.head.next_node
