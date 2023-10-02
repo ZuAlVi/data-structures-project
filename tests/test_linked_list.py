@@ -37,6 +37,13 @@ class TestLinkedList(unittest.TestCase):
             {'id': 2, 'username': 'mik.roz'},
         ])
 
+    def test_linked_list_gey_data_by_id(self):
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+        ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+        ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+        self.assertEquals(ll.get_data_by_id(3), {'id': 3, 'username': 'mosh_s'})
+
 
 
 
