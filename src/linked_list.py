@@ -41,3 +41,12 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string.strip()
+
+    def to_list(self):
+        """Метод возвращает список данных односвязного списка"""
+        total_list = []
+        node = self.head
+        while node:
+            total_list.append(node.data)
+            node = node.next_node
+        return total_list
