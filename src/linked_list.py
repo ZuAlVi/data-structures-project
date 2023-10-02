@@ -50,3 +50,17 @@ class LinkedList:
             total_list.append(node.data)
             node = node.next_node
         return total_list
+
+    def get_data_by_id(self, value):
+        """Метод возвращает элемент из списка данных односвязного списка,
+        если элемент типа dict и у него есть ключ 'id',
+        иначе обрабатывает raise TypeError и выводит сообщение."""
+        data = self.to_list()
+        for item in data:
+            try:
+                if not isinstance(item, dict):
+                    raise TypeError
+                elif item.get('id') == value:
+                    return item
+            except TypeError:
+                print('Данные не являются словарем или в словаре нет id.')
